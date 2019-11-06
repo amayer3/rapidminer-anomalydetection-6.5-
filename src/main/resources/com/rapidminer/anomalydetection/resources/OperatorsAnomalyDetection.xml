@@ -117,12 +117,5 @@
 				</class>
 			</operator>
 		</group>
-		<group key="autoencoder_based">
-			<operator>
-				<key>Deep Autoencoder Anomaly Score</key>
-				<class>de.dfki.madm.anomalydetection.operator.autoencoder_based.DAEAnomalyScoreOperator</class>
-				<icon>operator_icon.png</icon>
-			</operator>
-        </group>
 
 </operators>
