@@ -1,0 +1,74 @@
+buildscript {
+	repositories {
+	    jcenter()
+		maven { url 'https://maven.rapidminer.com/content/groups/public/' }
+	}
+}
+
+plugins { id 'com.rapidminer.extension' version '0.9.3'
+		  
+}
+
+
+// Define Maven artifact repositories
+repositories {
+    jcenter()
+	maven { 
+			url 'https://maven.rapidminer.com/content/groups/public/'
+	
+			
+    }
+ 
+    
+}
+
+extensionConfig {
+
+    // The extension name
+    name 'Anomaly Detection'
+
+    /*
+     * The artifact group which will be used when publishing the extensions Jar
+     * and for package customization when initializing the project repository.
+     *
+     * It is 'com.rapidminer.extension' by default.
+     */
+    groupId = 'de.dfki.madm.anomalydetection'
+
+    /*
+     * The extension vendor which will be displayed in the extensions about box
+     * and for customizing the license headers when initializing the project repository.
+     *
+     * It is 'RapidMiner GmbH' by default.
+     */
+    vendor = "German Research Center for Artificial Intelligence (DFKI GmbH)"
+
+    /*
+     * The vendor homepage which will be displayed in the extensions about box
+     * and for customizing the license headers when initializing the project repository.
+     *
+     * It is 'www.rapidminer.com' by default.
+     */
+    homepage = "http://madm.dfki.de/rapidminer/anomalydetection"
+
+    // define RapidMiner version and extension dependencies
+    dependencies {
+    	rapidminer '6.5.0' 
+    }
+}
+
+// Define third party library dependencies
+dependencies {
+	
+
+	compile group: 'org.deeplearning4j', name: 'deeplearning4j-core', version: '1.0.0-beta4'
+    compile group: 'org.nd4j', name: 'nd4j-native-platform', version: '1.0.0-beta4'
+    
+	compile group: 'org.encog', name: 'encog-core', version: '3.2.0'
+	compile group: 'org.apache.commons', name: 'commons-math', version: '2.2'
+	
+}
+
+shadowJar {
+    zip64 true
+}
